@@ -21,6 +21,9 @@ import {
   PointOfSale,
   Traffic,
 } from "@mui/icons-material";
+import { HandWithdraw } from "@phosphor-icons/react";
+
+
 import { tokens } from "../../theme";
 import { mockTransactions } from "../../data/mockData";
 
@@ -33,29 +36,8 @@ function Dashboard() {
   return (
     <Box m="20px">
       <Box display="flex" justifyContent="space-between">
-        <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
-        {!isXsDevices && (
-          <Box>
-            <Button
-              variant="contained"
-              sx={{
-                bgcolor: colors.blueAccent[700],
-                color: "#fcfcfc",
-                fontSize: isMdDevices ? "14px" : "10px",
-                fontWeight: "bold",
-                p: "10px 20px",
-                mt: "18px",
-                transition: ".3s ease",
-                ":hover": {
-                  bgcolor: colors.blueAccent[800],
-                },
-              }}
-              startIcon={<DownloadOutlined />}
-            >
-              DOWNLOAD REPORTS
-            </Button>
-          </Box>
-        )}
+        <Header title="Panel Principal" subtitle="Resumen del día." />
+       
       </Box>
 
       {/* GRID & CHARTS */}
@@ -81,13 +63,11 @@ function Dashboard() {
         >
           <StatBox
             title="11,361"
-            subtitle="Email Sent"
+            subtitle="Turnos Generados"
             progress="0.75"
             increase="+14%"
             icon={
-              <Email
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
+              <HandWithdraw size={26} sx={{ color: colors.greenAccent[600] }} />
             }
           />
         </Box>
