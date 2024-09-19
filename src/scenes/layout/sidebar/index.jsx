@@ -68,14 +68,13 @@ const SideBar = () => {
                 sx={{ transition: ".3s ease" }}
               >
                 <img
-                  style={{ width: "130px"}}
+                  style={{ width: "130px" }}
                   src="logo-white.png"
                   alt="Argon"
                 />
-
               </Box>
             )}
-            <IconButton sx={{mt:2}} onClick={() => setCollapsed(!collapsed)}>
+            <IconButton sx={{ mt: 2 }} onClick={() => setCollapsed(!collapsed)}>
               <MenuOutlined />
             </IconButton>
           </Box>
@@ -117,7 +116,7 @@ const SideBar = () => {
           menuItemStyles={{
             button: {
               ":hover": {
-                color:colors.cyanAccent[500],
+                color: colors.cyanAccent[500],
                 background: "transparent",
                 transition: ".4s ease",
               },
@@ -156,14 +155,20 @@ const SideBar = () => {
             icon={<PeopleAltOutlined />}
           />
           <Item
-            title="Filas"
-            path="/queues"
+            title="Solicitudes"
+            path="/solicitudes"
             colors={colors}
             icon={<ContactsOutlined />}
           />
           <Item
-            title="Tickets"
+            title="PreInstalaciones"
             path="/tickets"
+            colors={colors}
+            icon={<Ticket />}
+          />
+          <Item
+            title="PreInstalaciones"
+            path="/preinstalaciones"
             colors={colors}
             icon={<Ticket />}
           />
@@ -191,15 +196,8 @@ const SideBar = () => {
             },
           }}
         >
-
-          <Item
-            title="Accesos"
-            path="/faq"
-            colors={colors}
-            icon={<Key/>}
-          />
+          <Item title="Accesos" path="/faq" colors={colors} icon={<Key />} />
         </Menu>
-        
       </Box>
     </Sidebar>
   );

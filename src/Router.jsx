@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import App from "./App";
 import { Dashboard } from "./scenes";
-import { Tickets } from "./scenes/tickets";
+import { Preinstalaciones } from "./scenes/preInstalaciones";
 import { Queues } from "./scenes/queues";
 import { Login } from "./scenes/login";
 import { ProtectedRoute } from "./scenes/ProtectedRoute";
@@ -16,7 +16,7 @@ const AppRouter = () => (
         <Route path="/" element={<App />}>
           <Route index element={<Dashboard />} />
           <Route path="services" element={<Services />} />
-          <Route path="tickets" element={<Tickets />} />
+          <Route path="preinstalaciones" element={<Preinstalaciones />} />
           <Route path="queues" element={<Queues />} />
         </Route>
       </Route>
