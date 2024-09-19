@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import App from "./App";
 import { Dashboard } from "./scenes";
-import { Preinstalaciones } from "./scenes/preInstalaciones";
+import { Preinstalaciones } from "./scenes/preinstalaciones";
 import { Queues } from "./scenes/queues";
 import { Login } from "./scenes/login";
 import { ProtectedRoute } from "./scenes/ProtectedRoute";
