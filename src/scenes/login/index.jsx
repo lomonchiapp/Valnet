@@ -26,18 +26,8 @@ export const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const trimmedEmail = email.trim();
-    const trimmedPassword = password.trim();
-  
-    if (trimmedEmail === "" || trimmedPassword === "") {
-      setError("Please fill in all fields");
-      return;
-    }
-  
-    setError("");
-  
     try {
-      const userCredential = await signInWithEmailAndPassword(FIREBASE_AUTH, trimmedEmail, trimmedPassword);
+      const userCredential = await signInWithEmailAndPassword(FIREBASE_AUTH, email, password);
       const user = userCredential.user;
       navigate("/");
     } catch (error) {

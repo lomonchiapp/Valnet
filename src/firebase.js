@@ -11,13 +11,12 @@ import {getAuth} from 'firebase/auth';
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBTYIbDuBiPSjM7ZwEL1LVqPpCCNolUS5k",
-    authDomain: "ixiturn.firebaseapp.com",
-    databaseURL: "https://ixiturn-default-rtdb.firebaseio.com",
-    projectId: "ixiturn",
-    storageBucket: "ixiturn.appspot.com",
-    messagingSenderId: "175412055535",
-    appId: "1:175412055535:web:cdfe49fa4cb4a0a6323a1a"
+  apiKey: "AIzaSyDOvF1D5ddPPYKYgcSOnd4RL0M8bvuFnDk",
+  authDomain: "valnet-a5d18.firebaseapp.com",
+  projectId: "valnet-a5d18",
+  storageBucket: "valnet-a5d18.appspot.com",
+  messagingSenderId: "177569600912",
+  appId: "1:177569600912:web:3e41909e42a29f3f398f15"
   };
 
 // Initialize Firebase
