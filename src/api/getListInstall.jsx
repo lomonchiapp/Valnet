@@ -5,7 +5,7 @@ const API_TOKEN = import.meta.env.VITE_API_TOKEN;
 const API_DIR = '/v1/ListInstall';
 export const getListInstall = async () => {
     try {
-        const response = await axios.post(`${API_URL}${API_DIR}`, {
+        const response = await axios.post(`${API_URL}`, {
             token: API_TOKEN,
         },{
             headers: {
