@@ -1,13 +1,10 @@
 import axios from 'axios';
 
-const API_URL = '/.netlify/functions/proxy';
-const API_TOKEN = import.meta.env.VITE_API_TOKEN;
-const API_DIR = '/v1/ListInstall';
+const API_URL = '/api/proxy';
+
 export const getListInstall = async () => {
     try {
-        const response = await axios.post(`${API_URL}`, {
-            token: API_TOKEN,
-        },{
+        const response = await axios.post(API_URL, {}, {
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -15,7 +12,6 @@ export const getListInstall = async () => {
 
         // Log the response for debugging
         console.log("Response:", response);
-        console.log("api url:", `${API_URL}${API_DIR}`);
         if (response.headers['content-type'].includes('application/json')) {
             const data = response.data;
 
@@ -30,4 +26,4 @@ export const getListInstall = async () => {
         console.error("Error:", error);
         return [];
     }
-}
+};

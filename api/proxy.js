@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-exports.handler = async (event, context) => {
+module.exports = async (req, res) => {
   const API_URL = 'http://38.57.232.66:3031/v1/ListInstall';
   const API_TOKEN = process.env.API_TOKEN;
 
@@ -13,14 +13,8 @@ exports.handler = async (event, context) => {
       }
     });
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify(response.data),
-    };
+    res.status(200).json(response.data);
   } catch (error) {
-    return {
-      statusCode: error.response ? error.response.status : 500,
-      body: JSON.stringify({ message: error.message }),
-    };
+    res.status(error.response ? error.response.status : 500).json({ message: error.message });
   }
 };
