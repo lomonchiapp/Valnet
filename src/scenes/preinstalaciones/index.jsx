@@ -23,9 +23,18 @@ export const Preinstalaciones = () => {
   const colors = tokens(theme.palette.mode);
   
   useEffect(() => {
-    getListInstall().then((data) => {
-      setPreinstalls(data);
-    });
+    getListInstall()
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setPreinstalls(data);
+        } else {
+          console.error("Error: Data is not an array", data);
+        }
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching installations:", error);
+      });
   }, []);
 
   const styles = {
