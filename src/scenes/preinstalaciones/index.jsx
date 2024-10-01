@@ -37,6 +37,30 @@ export const Preinstalaciones = () => {
       });
   }, []);
 
+  const customLocaleText = {
+    noRowsLabel: 'No hay filas',
+    toolbarDensity: 'Densidad',
+    toolbarDensityLabel: 'Densidad',
+    toolbarDensityCompact: 'Compacto',
+    toolbarDensityStandard: 'Estándar',
+    toolbarDensityComfortable: 'Cómodo',
+    toolbarColumns: 'Columnas',
+    toolbarColumnsLabel: 'Seleccionar columnas',
+    toolbarFilters: 'Filtros',
+    toolbarFiltersLabel: 'Mostrar filtros',
+    toolbarFiltersTooltipHide: 'Ocultar filtros',
+    toolbarFiltersTooltipShow: 'Mostrar filtros',
+    toolbarExport: 'Exportar',
+    toolbarExportLabel: 'Exportar',
+    toolbarExportCSV: 'Descargar como CSV',
+    toolbarExportPrint: 'Imprimir',
+    // Pagination labels
+    footerRowSelected: (count) => `${count.toLocaleString()} fila(s) seleccionada(s)`,
+    footerTotalRows: 'Filas Totales:',
+    footerPaginationRowsPerPage: 'Filas por página:',
+    footerPaginationLabelDisplayedRows: ({ from, to, count }) =>
+      `${from}–${to} de ${count !== -1 ? count : `más de ${to}`}`,
+  };
   const styles = {
     page: {
       padding: "40px",
@@ -70,11 +94,13 @@ export const Preinstalaciones = () => {
       <Box>
         <DataGrid
           rows={preinstalls}
+          localeText={customLocaleText}
           columns={[
             { field: "cliente", headerName: "Cliente", width: 150 },
             { field: "cedula", headerName: "Cedula", width: 150 },
             { field: "estate", headerName: "Estado", width: 150 },
             { field: "telefono", headerName: "Telefono", width: 150 },
+            { field: "movil", headerName: "Movil", width: 150 },
             { field: "fecha_instalacion", headerName: "F. de Instalación", width: 150 },
           ]}
           pageSize={5}
